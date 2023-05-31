@@ -98,3 +98,42 @@ function calculateTotalPrice(orderedItems) {
         return totalPrice;
     })
 };
+
+// const numbers = [1, 2, 3, 4, 5];
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  // Change code below this line
+
+  numbers.forEach(function (number) {
+  if (number > value) {
+      filteredNumbers.push(number);
+  }
+
+  // for (let i = 0; i < numbers.length; i += 1) {
+  //   if (numbers[i] > value) {
+  //     filteredNumbers.push(numbers[i]);
+  //   }
+  
+  });
+  // Change code above this line
+    return filteredNumbers;
+}
+
+filterArray([1, 2, 3, 4, 5], 3);
+
+function getCommonElements(firstArray, secondArray) {
+  const commonElements = [];
+  // Change code below this line
+
+
+  firstArray.forEach(function (number) {
+    if (secondArray.includes(firstArray.number)) {
+      commonElements.push(firstArray.number);
+    }
+  });
+  return commonElements;
+  // Change code above this line
+};
+
+getCommonElements([1, 2, 3], [2, 4]);
+getCommonElements([1, 2, 3], [10, 20, 30]);
