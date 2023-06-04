@@ -256,14 +256,27 @@ const playerIdToUpdate = 'player-3';
 // });
 
 // виконаємо рефакторинг
+// const updatedPlayers = players.map(player => {
+//     if (player.id === playerIdToUpdate) {
+//         return {
+//             ...player,
+//             timePlayed: player.timePlayed + 50,
+//         };
+//     }
+//     return player;
+// });
+// щоб ще спростити використаємо тернарний оператор
 const updatedPlayers = players.map(player => {
-    if (player.id === playerIdToUpdate) {
-        return {
-            ...player,
-            timePlayed: player.timePlayed + 50,
-        };
-    }
-    return player;
+    return player.id === playerIdToUpdate
+        ? { ...player, timePlayed: player.timePlayed + 50 }
+        : player;
 });
+
+// самий короткий запис!
+// const updatedPlayers = players.map(player => 
+//     player.id === playerIdToUpdate
+//         ? { ...player, timePlayed: player.timePlayed + 50 }
+//         : player,
+// );
 
 console.table(updatedPlayers);
