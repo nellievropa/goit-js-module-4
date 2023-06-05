@@ -324,15 +324,44 @@ users = [
     age: 39
   }
 ];
+// це мій варіант - виводяться тільки імена
+// const getUsersWithFriend = (users, friendName) => {
+//   array = [];
 
+//    users.filter((user) => {
+//     if (user.friends.includes(friendName)) {
+//       array.push(user.name);
+//     }
+//    });
+//    return array;
+// }; 
+  // це варіант з автоперевірки - виводиться вся інфа на юзера
 const getUsersWithFriend = (users, friendName) => {
-    array = [];
-    if (user.friends === friendName)
-        array.push(user.name);
-
+	return users.filter((user) => user.friends.includes(friendName));
 };
 
 console.log(getUsersWithFriend(users, "Briana Decker"));
+console.log(getUsersWithFriend(users, "Goldie Gentry"));
 
-// return users.filter(({ friends }) => friends === friendName)
-// };
+
+// вибрати тільки унікальних друзів( щоб не повторювались!)
+
+const getFriends = (users) => { 
+  return users.flatMap(user => user.friends)
+ .filter((friend, index, array) => array.indexOf(friend) === index);
+};
+
+console.log(getFriends(users));
+// const allGenres = books.flatMap(book => book.genres);
+// const uniqueGenres = allGenres.filter((genre, index, array) => array.indexOf(genre) === index);
+
+// відфільтруватитих, що онлайн
+const getActiveUsers = (users) => {
+  return users.filter((user) => user.isActive);
+};
+console.log(getActiveUsers(users));
+
+// повернути тих, що не онлайн
+const getInactiveUsers = (users) => {
+  return users.filter((user) => !user.isActive);
+};
