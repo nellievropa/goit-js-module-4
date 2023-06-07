@@ -212,13 +212,16 @@ users = [
   }
 ];
 
-const sortByAscendingBalance =  [...users].sort((firstUser, secondUser) => firstUser.balance - secondUser.balance);
+
+// const sortByAscendingBalance =  [...users].sort((firstUser, secondUser) => firstUser.balance - secondUser.balance);
  
-console.log(sortByAscendingBalance);
+// console.log(sortByAscendingBalance);
 
-// відсортували по кількості друзів спадаюча
-const sortByDescendingFriendCount = [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length);
-console.log(sortByDescendingFriendCount);
 
-// відсортувати по імені в алфавитному порядку
-const sortByName = users => [...users].sort((firstUser, secondUser) => firstUser.name.localeCompare(secondUser.name));
+
+// // відсортували по кількості друзів спадаюча
+// const sortByDescendingFriendCount = [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length);
+
+
+// // відсортувати по імені в алфавитному порядку
+// const sortByName = users => [...users].sort((firstUser, secondUser) => firstUser.name.localeCompare(secondUser.name));
